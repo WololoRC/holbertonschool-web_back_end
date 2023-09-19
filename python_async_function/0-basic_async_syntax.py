@@ -4,7 +4,7 @@ import random
 import asyncio
 
 
-async def wait_random(max_delay: int | float = 10) -> float:
+async def wait_random(max_delay: int = 10) -> float:
     """
     Wait 'n' seconds and return a number within 0 and max_delay
     - max_delat : int | float

@@ -1,4 +1,4 @@
-#!/sur/bin/env pyhton3
+#!/usr/bin/env python3
 """ Task 00 """
 import asyncio
 import random

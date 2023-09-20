@@ -7,12 +7,14 @@ class BasicCache(BaseCaching):
     """ A simple cache system Class """
 
     def put(self, key, item):
+        """ Put new data on Cache """
         if key is None or item is None:
             pass
         else:
             self.cache_data.update({key: item})
 
     def get(self, key):
+        """ Return specific data from Cache """
         if key is None or key not in self.cache_data:
             pass
         else:

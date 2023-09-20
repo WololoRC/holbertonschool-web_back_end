@@ -19,7 +19,7 @@ class FIFOCache(BaseCaching):
         else:
             self.cache_data.update({key: item})
 
-        if len(self.cache_data) > 4:
+        if len(self.cache_data) > self.MAX_ITEMS:
             rm_key = [item for item in self.cache_data.keys()]
             self.cache_data.pop(rm_key[0])
             print(f"DISCARD: {rm_key[0]}")

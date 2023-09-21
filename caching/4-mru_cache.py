@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """ MRU is amazing! """
 from base_caching import BaseCaching
-from collections import OrderedDict
 
 
 class MRUCache(BaseCaching):

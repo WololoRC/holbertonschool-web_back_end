@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 """ simple helper function """
 
+
 def index_range(page, page_size):
     """ Return a tuple of size two.
         First value: Number of page.

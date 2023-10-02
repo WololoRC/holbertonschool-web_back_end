@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
+""" I hate regular expresions """
+
 import re
 from typing import List
-""" I hate regular expresions """
 
 
 def filter_datum(

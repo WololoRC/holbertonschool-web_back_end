@@ -2,6 +2,8 @@
 """ BasicAuth module """
 from .auth import Auth
 from base64 import b64decode
+from models.user import User
+from typing import TypeVar
 
 
 class BasicAuth(Auth):
@@ -58,3 +60,24 @@ class BasicAuth(Auth):
 
         decode_this = decoded_base64_authorization_header.split(':')
         return decode_this[0], decode_this[1]
+
+    def user_object_from_credentials(
+                                    self, user_email: str,
+                                    user_pwd: str
+                                    ) -> TypeVar('User'):
+        """
+        returns User instance based on email and password.
+        """
+
+        if user_email is None or type(user_email) is not str:
+            return None
+        if user_pwd is None or type(user_pwd) is not str:
+            return None
+
+        try:
+            users = User.search({"email": user_email})
+            for item in users:
+                if item.is_valid_password(user_pwd):
+                    return item
+        except Exception:
+            return None

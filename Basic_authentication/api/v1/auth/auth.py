@@ -47,3 +47,7 @@ class Auth:
           None
         """
         return None
+
+
+class BasicAuth(Auth):
+    """ Empty fot the moment """
